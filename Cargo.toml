@@ -1,0 +1,13 @@
+[package]
+name = "l1x-ft"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+borsh = { version = "0.9", features = ["const-generics"] }
+l1x-sdk = { git = "https://github.com/L1X-Foundation-Consensus/l1x-templ-sdk", package = "l1x-sdk" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
