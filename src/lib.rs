@@ -46,6 +46,7 @@ pub struct NFTMetadata {
     decimals: u8,
     symbol: String,
     icon: Option<String>,
+    uri: String,
 }
 
 #[derive(Debug, BorshSerialize, BorshDeserialize)]
@@ -113,6 +114,11 @@ impl NftContract {
     pub fn nft_icon() -> Option<String> {
         let contract = Self::load();
         contract.metadata.icon
+    }
+
+    pub fn nft_token_uri(id: U128) -> String {
+        let contract = Self::load();
+        contract.metadata.uri + &id.0.to_string() + ".json"
     }
 
     pub fn nft_metadata() -> NFTMetadata {
