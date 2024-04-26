@@ -2,6 +2,11 @@
 name = "l1x-contract"
 version = "0.1.0"
 edition = "2021"
+authors = ["The L1X Project Developers"]
+license = "Apache-2.0"
+description = """
+L1X example contact
+"""
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -10,6 +15,6 @@ crate-type = ["cdylib"]
 
 [dependencies]
 borsh = { version = "0.9", features = ["const-generics"] }
-l1x-sdk = { path = "../l1x-virtual-machine/l1x-sdk", package = "l1x-sdk" }
+l1x-sdk = "0.3.1"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
